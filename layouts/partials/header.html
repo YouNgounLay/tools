@@ -13,7 +13,7 @@
         </div>
         <div class="drawer-content">
             {{ range .Site.RegularPages }}
-               <a href="{{ .Permalink }}">{{ .Title }}</a>
+               <a href="{{ .RelPermalink }}">{{ .Title }}</a>
             {{ end }}
         </div>
     </div>
