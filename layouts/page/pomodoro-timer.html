@@ -13,15 +13,19 @@
 		<button id="home-btn">Home</button>
 		<div class="page-body-container">
 			<div class="split-container">
-				<h1 id="timer-title">Focus Time</h1>
+				<h1 id="timer-title" class="title-text">Focus Time</h1>
 				<time id="timer-display" class="timer-text">10:00</time>
 				<button id="timer-btn">Start</button>
 			</div>
-			<div class="split-container"></div>
-
+			<div class="split-container">
+			    <h1 id="title" style="color: black; font-size: 40px">Tasks To Complete</h1>
+			    <input type="text" id="task-search" placeholder="Search tasks...">
+			    <div id="tasks-container"></div>
+			    <button id="add-task-btn">Add Task</button>
+			</div>
 		</div>
-			<button id="setting-btn">Settings</button>
-
+		<button id="video-btn" class="custom-btn">Audios</button>
+		<button id="setting-btn" class="custom-btn">Settings</button>
 	    <!-- Modal for settings -->
 	    <div id="settings-modal" class="modal">
 	        <div class="modal-content">
@@ -36,13 +40,33 @@
 	            <button class="close" id="close-settings-btn">Close</button>
 	        </div>
 	    </div>
-		
+	  
+    <!-- Video container -->
+    <div class="video-container" id="video-container">
+        <div class="video-content">
+            <h3>Focus Time Video</h3>
+            <iframe id="focus-video" width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
+            <div class="video-inputs">
+                <input type="text" id="focus-video-url" placeholder="Enter YouTube URL">
+                <button id="set-focus-video">Set Focus Video</button>
+            </div>
+        </div>
+        <div class="video-content">
+            <h3>Break Time Video</h3>
+            <iframe id="break-video" width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
+            <div class="video-inputs">
+                <input type="text" id="break-video-url" placeholder="Enter YouTube URL">
+                <button id="set-break-video">Set Break Video</button>
+            </div>
+        </div>
+    </div>
 
-		{{ $scripts := slice "timer" }}
+
+		{{ $scripts := slice "timer" "task" }}
 		{{ range $script := $scripts }}
 			{{ $script := printf "scripts/%s.js" $script }}
 			{{ $script := resources.Get $script | resources.Minify | fingerprint }}
-	    	<script src="{{ $script.Permalink }}"></script>
+	    	<script src="{{ $script.RelPermalink }}"></script>
 		{{ end }}
 	</body>
 </html>

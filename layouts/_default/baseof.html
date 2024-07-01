@@ -18,7 +18,7 @@
 		{{ range $script := $scripts }}
 			{{ $script := printf "scripts/%s.js" $script }}
 			{{ $script := resources.Get $script | resources.Minify | fingerprint }}
-	    	<script src="{{ $script.Permalink }}"></script>
+	    	<script src="{{ $script.RelPermalink }}"></script>
 		{{ end }}
 	</body>
 </html>

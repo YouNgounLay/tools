@@ -17,15 +17,19 @@
 		<button id="home-btn">Home</button>
 		<div class="page-body-container">
 			<div class="split-container">
-				<h1 id="timer-title">Focus Time</h1>
+				<h1 id="timer-title" class="title-text">Focus Time</h1>
 				<time id="timer-display" class="timer-text">10:00</time>
 				<button id="timer-btn">Start</button>
 			</div>
-			<div class="split-container"></div>
-
+			<div class="split-container">
+			    <h1 id="title" style="color: black; font-size: 40px">Tasks To Complete</h1>
+			    <input type="text" id="task-search" placeholder="Search tasks...">
+			    <div id="tasks-container"></div>
+			    <button id="add-task-btn">Add Task</button>
+			</div>
 		</div>
-			<button id="setting-btn">Settings</button>
-
+		<button id="video-btn" class="custom-btn">Audios</button>
+		<button id="setting-btn" class="custom-btn">Settings</button>
 	    
 	    <div id="settings-modal" class="modal">
 	        <div class="modal-content">
@@ -40,13 +44,37 @@
 	            <button class="close" id="close-settings-btn">Close</button>
 	        </div>
 	    </div>
-		
+	  
+    
+    <div class="video-container" id="video-container">
+        <div class="video-content">
+            <h3>Focus Time Video</h3>
+            <iframe id="focus-video" width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
+            <div class="video-inputs">
+                <input type="text" id="focus-video-url" placeholder="Enter YouTube URL">
+                <button id="set-focus-video">Set Focus Video</button>
+            </div>
+        </div>
+        <div class="video-content">
+            <h3>Break Time Video</h3>
+            <iframe id="break-video" width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
+            <div class="video-inputs">
+                <input type="text" id="break-video-url" placeholder="Enter YouTube URL">
+                <button id="set-break-video">Set Break Video</button>
+            </div>
+        </div>
+    </div>
+
 
 		
 		
 			
 			
-	    	<script src="http://localhost:1313/tools/scripts/timer.min.e0fa5b9321d693731d9aa8426a562e5488da960c395a2aa6761d2603ca3b944a.js"></script>
+	    	<script src="/tools/scripts/timer.min.b8807147f585cdb53b4ea30626c15bfaa2f8e83f3fb61d438789adbcdf28e04e.js"></script>
+		
+			
+			
+	    	<script src="/tools/scripts/task.min.b736f819e6bc02e5b584e959c98bb142a687d1419eacfdb78152da73c0032ff9.js"></script>
 		
 	</body>
 </html>
