@@ -31,6 +31,46 @@
     .navbar .menu:hover {
       background-color: #EEEEEE; }
       .navbar .menu:hover a {
-        color: #FF7F3E; }
+        color: #FF7F3E;
+        cursor: pointer; }
     .navbar .menu .menu-item {
       font-size: 18px; }
+
+.drawer {
+  position: fixed;
+  top: 0;
+  right: -400px;
+  height: 100%;
+  width: 300px;
+  background-color: #FF7F3E;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+  /*    overflow-x: hidden;*/
+  transition: 0.3s; }
+
+.drawer.active {
+  right: 0; }
+
+.drawer-header {
+  display: flex;
+  margin: 20px;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px; }
+
+.drawer-close-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer; }
+
+.drawer-content a {
+  display: block;
+  padding: 20px;
+  color: #FF7F3E;
+  border: 2px solid;
+  background-color: #EEEEEE;
+  text-decoration: none;
+  transition: 0.2s; }
+  .drawer-content a:hover {
+    translate: -10px -10px;
+    scale: 1.2; }

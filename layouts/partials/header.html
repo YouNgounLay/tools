@@ -2,7 +2,18 @@
 	<nav class="navbar">
  		<h1>Productivity Tools</h1>
  		<div class="menu">
- 			<a class="menu-item">Tools</a>
+ 			<a class="menu-item" id="tools-btn">Tools</a>
  		</div>
 	</nav>
 </header>
+ <div class="drawer" id="drawer">
+        <div class="drawer-header">
+            <h2>Tools</h2>
+            <button class="drawer-close-btn" id="drawer-close-btn">&times;</button>
+        </div>
+        <div class="drawer-content">
+            {{ range .Site.RegularPages }}
+               <a href="{{ .Permalink }}">{{ .Title }}</a>
+            {{ end }}
+        </div>
+    </div>

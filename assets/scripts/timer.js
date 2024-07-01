@@ -117,6 +117,6 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
     const homeBtn = document.getElementById('home-btn');
     homeBtn.addEventListener('click', function() {
-        window.location.href = '/';
+        window.location.href = '/tools';
     });
 });

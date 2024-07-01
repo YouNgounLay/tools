@@ -14,6 +14,11 @@
 		{{ block "main" . }}
 		{{ end }}
 		{{ partial "footer" . }}
-		
+		{{ $scripts := slice "navbar" }}
+		{{ range $script := $scripts }}
+			{{ $script := printf "scripts/%s.js" $script }}
+			{{ $script := resources.Get $script | resources.Minify | fingerprint }}
+	    	<script src="{{ $script.Permalink }}"></script>
+		{{ end }}
 	</body>
 </html>
