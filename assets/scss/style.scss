@@ -1,0 +1,12 @@
+@import 'constants';
+
+* {
+	margin: 0px; 
+	font-family: $font-stack;
+	color: $text-color;
+}
+
+html, body {
+	height: 100%;
+}
+

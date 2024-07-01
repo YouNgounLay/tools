@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron");
+@import url("https://fonts.googleapis.com/css2?family=Lora&family=Lora:wght@700&family:=Lora:wght@500");
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono");
+ 
+$clock-font-stack: "Orbitron", "Lora", "Space Grotesk", "Helvetica", "Arial";
+$font-stack: "Lora", "Space Grotesk", "Helvetica", "Arial";
+$number-font-stack: "JetBrains Mono","Lora", "Space Grotesk", "Helvetica", "Arial";
+
+$primary-color: #FF7F3E;
+$accent-color: #FFF6E9;
+$secondary-color: #80C4E9;
+$tertiary-color: #604CC3;
+
+$text-color: #EEEEEE;
+
+@mixin center-flex-box($ai: center, $jc: center) {
+	display: flex;
+	align-items: $ai;
+	justify-content: $jc;
+}
+
+@mixin page-body($padding: 5%) {
+	@include center-flex-box;
+	padding: $padding;
+	height: 100%;
+}
+
+#home-btn {
+	position: fixed;
+	top: 20px;
+	left: 20px;
+	background-color: white;
+	color: $primary-color;
+	box-shadow: rgb(235, 235, 235) 0px 6px 0px;
+	border: none;
+	padding: 10px 20px;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 16px;
+	transition: 0.2s;
+
+	&:hover {
+		scale: 1.2;
+	}
+}

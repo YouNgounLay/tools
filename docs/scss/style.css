@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron");
+@import url("https://fonts.googleapis.com/css2?family=Lora&family=Lora:wght@700&family:=Lora:wght@500");
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono");
+#home-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background-color: white;
+  color: #FF7F3E;
+  box-shadow: #ebebeb 0px 6px 0px;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.2s; }
+  #home-btn:hover {
+    scale: 1.2; }
+
+* {
+  margin: 0px;
+  font-family: "Lora", "Space Grotesk", "Helvetica", "Arial";
+  color: #EEEEEE; }
+
+html, body {
+  height: 100%; }

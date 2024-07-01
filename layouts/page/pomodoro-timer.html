@@ -1,0 +1,48 @@
+<!Doctype html> 
+<html>
+	<head>
+		<title>{{ .Title }}</title>
+		{{ $styles := slice "style" "pomodoro-timer"}}
+		{{ range $style := $styles }}
+			{{ $style := printf "scss/%s.scss" $style }}
+			{{ $style := resources.Get $style | toCSS }}
+			<link rel='stylesheet' href='{{ $style.RelPermalink }}'>
+		{{ end }}
+	</head>	
+	<body> 
+		<button id="home-btn">Home</button>
+		<div class="page-body-container">
+			<div class="split-container">
+				<h1 id="timer-title">Focus Time</h1>
+				<time id="timer-display" class="timer-text">10:00</time>
+				<button id="timer-btn">Start</button>
+			</div>
+			<div class="split-container"></div>
+
+		</div>
+			<button id="setting-btn">Settings</button>
+
+	    <!-- Modal for settings -->
+	    <div id="settings-modal" class="modal">
+	        <div class="modal-content">
+	            <h2>Settings</h2>
+	            <label for="focus-time">Focus Time (minutes):</label>
+	            <input type="number" id="focus-time" value="25">
+	            <label for="break-time">Break Time (minutes):</label>
+	            <input type="number" id="break-time" value="10">
+	            <label for="long-break-time">Long Break Time (minutes):</label>
+	            <input type="number" id="long-break-time" value="15">
+	            <button id="save-settings-btn" style="margin-left: 0px">Save</button>
+	            <button class="close" id="close-settings-btn">Close</button>
+	        </div>
+	    </div>
+		
+
+		{{ $scripts := slice "timer" }}
+		{{ range $script := $scripts }}
+			{{ $script := printf "scripts/%s.js" $script }}
+			{{ $script := resources.Get $script | resources.Minify | fingerprint }}
+	    	<script src="{{ $script.Permalink }}"></script>
+		{{ end }}
+	</body>
+</html>

@@ -1,0 +1,28 @@
+@import 'constants';
+
+.navbar {
+	display: flex;
+	justify-content: space-between;	
+	align-items: center;
+	background-color: $primary-color;	
+	padding: 1.5em;
+
+	.menu {
+		padding: 1em;
+		transition: 0.3s;
+		border-radius: 8px;
+
+		&:hover {
+			background-color: $text-color;
+
+			a {
+				color: $primary-color;
+			}
+		}
+
+		.menu-item {
+			font-size: 18px;
+		}
+	}
+}
+
